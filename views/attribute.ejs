@@ -1,0 +1,14 @@
+<h1><%= title %></h1>
+    <% imageAttributes.forEach(function(attribute) { %>
+        <div>
+            <img src="<%= attribute.src %>" alt="<%= attribute.alt %>" width="<%= attribute.width %>" height="<%= attribute.height %>">
+            <p>ID: <%= attribute.id %></p>
+            <p>Alt: <%= attribute.alt %></p>
+            <p>Description: <%= attribute.description %></p>
+            <p>Width: <%= attribute.width %>px</p>
+            <p>Height: <%= attribute.height %>px</p>
+            <p>Shoutout: <%- attribute.shoutout %></p>
+        </div>
+    <% }); %>
+</body>
+</html>

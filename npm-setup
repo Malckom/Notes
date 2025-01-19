@@ -1,0 +1,1 @@
+npm i connect-flash cookie-parser dotenv ejs express express-ejs-layouts express-fileupload express-session mongodb mongoose nodemon --save-dev method-override passport passport-google-oauth20
