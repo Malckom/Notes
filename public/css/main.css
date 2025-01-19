@@ -62,5 +62,12 @@ h1,h2,h3,h4,h5,h6 {
   --bs-gradient: none;
 }
 
+.pagination {
+  --bs-pagination-color: var(--bs-primary-rgb);
+  --bs-pagination-active-bg: var(--bs-primary-rgb);
+  --bs-pagination-active-border-color: var(--bs-primary-rgb);
+}
+
+
 
 
