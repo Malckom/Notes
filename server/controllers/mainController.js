@@ -2,12 +2,16 @@
 // Homepage
 
 exports.homepage = async (req, res) => {
-	const locals = {
-		title: 'Notebook',
-		description: 'The Unlimited Version'
-	}
-	res.render('index', locals);
+  const locals = {
+    title: "Notebook",
+    description: "The Unlimited Version",
+  }
+  res.render('index', {
+    locals,
+    layout: '../views/layouts/front-page'
+  });
 }
+
 
 // GET /
 // About

@@ -68,6 +68,42 @@ h1,h2,h3,h4,h5,h6 {
   --bs-pagination-active-border-color: var(--bs-primary-rgb);
 }
 
+/* Home */
+@media (min-width: 1200px) {
+    .home {
+        background:
+            url('../img/lifing.svg') left bottom no-repeat,
+            url('../img/person.svg') right bottom no-repeat,
+            /* url('../img/texting.svg') left top no-repeat, */
+            var(--background-color);
 
+        background-size: 
+            350px auto,  /* lifing.svg size */
+            350px auto,  /* person.svg size */
+            400px auto;  /* texting.svg size */
+    }
+}
+
+.home-title {
+    position: relative;  /* Add this to establish positioning context */
+}
+
+.home-title::before {
+    content: url('../img/man-u.svg');
+    position: absolute;
+    left: -50px;
+    top: -30px;
+    transform: scale(0.05);
+    transform-origin: top left; /* Add this to control scaling origin */
+}
+
+.home-title::after {
+    content: url('../img/man-u.svg');
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
+    transform: scale(0.05);
+    transform-origin: bottom right; /* Add this to control scaling origin */
+}
 
 
