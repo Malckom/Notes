@@ -1,0 +1,14 @@
+# Project Overview
+
+This project is designed to manage notes. It provides functionalities to create, read, update, and delete notes .
+
+## Features
+
+- Create new notes and presentations
+- Read existing notes and presentations
+- Update notes and presentations
+- Delete notes and presentations
+
+## Installation
+
+To install the project, clone the repository and install the dependencies:
