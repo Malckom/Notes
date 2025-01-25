@@ -1,109 +1,126 @@
 :root {
-  --background-color: #FFC700;
-  --bs-primary-rgb: #12296c;
+    --background-color: #a39e06;
+    --primary-color: #12296c;
+    --accent-color: #FF6B6B;
+    --text-color: #333;
+    --soft-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--background-color);
-  color: var(--bs-primary-rgb);
+  background: url('../img/notebook.jpg') no-repeat center center fixed;
+  background-size: cover;
   font-weight: 300;
   font-size: 1.2rem;
-  background-image: url(../img/passion.jpg)width="200" height="200";
+  line-height: 1.6;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Unbounded', cursive;
-  font-weight: 800;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Unbounded', cursive;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container-fluid-custom {
-  max-width: 1600px;
+    max-width: 1600px;
+    padding: 0 15px;
 }
 
-/* Button */
+/* Modern Button Styles */
 .btn {
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  border-radius: 2rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--soft-shadow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: var(--bs-primary-rgb);
-  --bs-btn-border-color: var(--bs-primary-rgb);
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0043a8;
-  --bs-btn-hover-border-color: #0043a8;
-  --bs-btn-focus-shadow-rgb: 49,132,253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: var(--bs-primary-rgb);
-  --bs-btn-active-border-color: var(--bs-primary-rgb);
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: var(--bs-primary-rgb);
-  --bs-btn-disabled-border-color: var(--bs-primary-rgb);
+    /* --bs-btn-color: #fff; */
+    /* --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--accent-color);
+    --bs-btn-hover-border-color: var(--accent-color);
+    background: var(--primary-color); */
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline-primary {
-  --bs-btn-color: var(--bs-primary-rgb);
-  --bs-btn-border-color: var(--bs-primary-rgb);
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0043a8;
-  --bs-btn-hover-border-color: #0043a8;
-  --bs-btn-focus-shadow-rgb: 13,110,253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: var(--bs-primary-rgb);
-  --bs-btn-active-border-color: var(--bs-primary-rgb);
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: var(--bs-primary-rgb);
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: var(--bs-primary-rgb);
-  --bs-gradient: none;
+    --bs-btn-color: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+    transform: scale(1.05);
 }
 
 .pagination {
-  --bs-pagination-color: var(--bs-primary-rgb);
-  --bs-pagination-active-bg: var(--bs-primary-rgb);
-  --bs-pagination-active-border-color: var(--bs-primary-rgb);
+    --bs-pagination-color: var(--primary-color);
+    --bs-pagination-active-bg: var(--primary-color);
+    --bs-pagination-active-border-color: var(--primary-color);
 }
 
-/* Home */
+/* Home Section Responsive Design */
 @media (min-width: 1200px) {
     .home {
         background:
             url('../img/lifing.svg') left bottom no-repeat,
             url('../img/person.svg') right bottom no-repeat,
-            /* url('../img/texting.svg') left top no-repeat, */
-            var(--background-color);
-
-        background-size: 
-            350px auto,  /* lifing.svg size */
-            350px auto,  /* person.svg size */
-            400px auto;  /* texting.svg size */
+            linear-gradient(135deg, var(--background-color) 0%, #FFD700 100%);
+        background-size:
+            350px auto, 
+            350px auto;
+        position: relative;
+        overflow: hidden;
     }
 }
 
 .home-title {
-    position: relative;  /* Add this to establish positioning context */
+    position: relative;
+    z-index: 1;
+}
+
+.home-title::before,
+.home-title::after {
+    content: url('../img/note.png');
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.5s ease;
 }
 
 .home-title::before {
-    content: url('../img/man-u.svg');
-    position: absolute;
     left: -50px;
     top: -30px;
-    transform: scale(0.05);
-    transform-origin: top left; /* Add this to control scaling origin */
+    transform: scale(0.05) rotate(-15deg);
 }
 
 .home-title::after {
-    content: url('../img/man-u.svg');
-    position: absolute;
     right: -50px;
     bottom: -30px;
-    transform: scale(0.05);
-    transform-origin: bottom right; /* Add this to control scaling origin */
+    transform: scale(0.05) rotate(15deg);
 }
 
+.home-title:hover::before {
+    transform: scale(0.07) rotate(-10deg);
+    opacity: 0.5;
+}
 
+.home-title:hover::after {
+    transform: scale(0.07) rotate(10deg);
+    opacity: 0.5;
+}
